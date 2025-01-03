@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flor Gótica Interactiva</title>
+    <style>
+        /* Fondo gótico con degradado oscuro */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(145deg, #2a2a2a, #1b1b1b);
+            font-family: 'Georgia', serif;
+            overflow: hidden;
+            color: #e3e3e3;
+            position: relative;
+        }
+
+        /* Fondo del poema */
+        .poema {
+            position: absolute;
+            top: 20%;
+            left: 5%;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            font-style: italic;
+            width: 90%;
+            max-width: 800px;
+            z-index: -1;
+        }
+
+        /* Efecto de niebla */
+        .fog {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('https://i.imgur.com/BLvskTy.png') repeat;
+            opacity: 0.1;
+            animation: drift 15s infinite linear;
+        }
+
+        @keyframes drift {
+            from { transform: translateX(0); }
+            to { transform: translateX(-100%); }
+        }
+
+        /* Flor interactiva */
+        a {
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        pre {
+            font-size: 20px;
+            line-height: 1.5;
+            color: #a65c68;
+            text-shadow: 0 0 10px rgba(166, 92, 104, 0.8), 0 0 20px rgba(166, 92, 104, 0.6);
+            animation: pulse 4s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { text-shadow: 0 0 10px rgba(166, 92, 104, 0.8); }
+            50% { text-shadow: 0 0 20px rgba(166, 92, 104, 1); }
+        }
+
+        pre:hover {
+            transform: scale(1.1);
+            transition: transform 0.5s;
+        }
+
+        /* Partículas flotantes */
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: rgba(166, 92, 104, 0.8);
+            border-radius: 50%;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) translateX(0); opacity: 0.8; }
+            50% { transform: translateY(-150px) translateX(50px); opacity: 0.5; }
+            100% { transform: translateY(-300px) translateX(-50px); opacity: 0; }
+        }
+
+        /* Instrucción */
+        footer {
+            position: absolute;
+            bottom: 15px;
+            text-align: center;
+            font-size: 18px;
+            color: #e3e3e3;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Niebla decorativa -->
+    <div class="fog"></div>
+
+    <!-- Partículas flotantes -->
+    <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="particle" style="left: 30%; animation-delay: 2s;"></div>
+    <div class="particle" style="left: 50%; animation-delay: 4s;"></div>
+    <div class="particle" style="left: 70%; animation-delay: 1s;"></div>
+    <div class="particle" style="left: 90%; animation-delay: 3s;"></div>
+
+    <!-- Poema de fondo -->
+    <div class="poema">
+        En la vastedad del silencio profundo,<br>
+        la luz se pierde en la oscuridad.<br>
+        Somos sombras errantes en el viento,<br>
+        buscando respuestas que nunca llegarán.<br><br>
+
+        El eco de nuestros pensamientos resuena,<br>
+        pero nunca se detiene.<br>
+        Vivimos, pero no entendemos,<br>
+        un susurro perdido en la eternidad.
+    </div>
+
+    <!-- Flor interactiva -->
+    <a href="https://youtu.be/MGwmIZm-3po?si=JtEuuoLFNhgVqyTA" target="_blank">
+        <pre>
+:::: , : – -:- – : , :::::
+:::: ) ` – : : – `(:::::: 
+::: / : : : :`\: : :\ ::::
+:::( : : : : : |: : :) ::
+::::\ :: : : :/ : : / ::::
+::::::Prisci :::::
+:::::::: -;;-’ ::::::::
+::::::::::: || :: , ::::::
+::::::::::: ||_-’| ::::::
+::::::: |’-: || : / ::::::
+::::::::\ : || :’ / ::::::
+::::::: \ : || : /:::::::
+::::::::: \:|| : /:::::: 
+::::::::: \:||:/ ::::::: 
+:::::::::::\||/::::::::: 
+::::::::::::|| ::::::::: 
+::::::::::::|| ::::::::: 
+::::::::::::|| ::::::::: 
+::::::::::::|| ::::::::: 
+::::::::::::||:::::::::: 
+        </pre>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        Haz clic en la flor por si se deprime 🌹
+    </footer>
+</body>
+</html>
+
+
